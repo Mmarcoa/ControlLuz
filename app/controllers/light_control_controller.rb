@@ -6,9 +6,19 @@ class LightControlController < ApplicationController
   end
   
   def on
+    require 'socket'
+    
+    s = TCPSocket.new '187.207.2.4', 8000
+    s.puts "LightOn\r\n"
+    s.close  
   end
 
   def off
+    require 'socket'
+    
+    s = TCPSocket.new '187.207.2.4', 8000
+    s.puts "LightOff\r\n"
+    s.close  
   end
   
   def verify
