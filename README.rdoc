@@ -1,0 +1,6 @@
+== README
+
+Página web para el control del encendido y apagado de un LED.
+
+23 de diciembre de 2015.
+Marco A. 
