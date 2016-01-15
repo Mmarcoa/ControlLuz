@@ -10,6 +10,7 @@ class LightControlController < ApplicationController
     
     s = TCPSocket.new '187.207.57.43', 8000
     s.puts "LightOn\n"
+    sleep 0.5
     s.close  
   end
 
@@ -18,6 +19,7 @@ class LightControlController < ApplicationController
     
     s = TCPSocket.new '187.207.57.43', 8000
     s.puts "LightOff\n"
+    sleep 0.5
     s.close  
   end
   
