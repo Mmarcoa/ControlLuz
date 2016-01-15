@@ -8,24 +8,24 @@ class LightControlController < ApplicationController
   def on
     require 'socket'
     
-    s = TCPSocket.new '187.207.2.4', 8000
-    s.puts "LightOn\r\n"
+    s = TCPSocket.new '187.207.57.43', 8000
+    s.puts "LightOn\n"
     s.close  
   end
 
   def off
     require 'socket'
     
-    s = TCPSocket.new '187.207.2.4', 8000
-    s.puts "LightOff\r\n"
+    s = TCPSocket.new '187.207.57.43', 8000
+    s.puts "LightOff\n"
     s.close  
   end
   
   def verify
     require 'socket'
     
-    s = TCPSocket.new '187.207.2.4', 8000
-    s.puts "Verify\r\n"
+    s = TCPSocket.new '187.207.57.43', 8000
+    s.puts "Verify\n"
     while line = s.gets # Read lines from socket
       if line == "On"
         redirect_to(on_path) and return
