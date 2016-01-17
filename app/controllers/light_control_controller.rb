@@ -2,13 +2,15 @@ class LightControlController < ApplicationController
 
   def new
     require 'socket'
-    session[:ip] = TCPSocket.gethostbyname("light-control.duckdns.org")[3]
+    session[:ip] ||= TCPSocket.gethostbyname("light-control.duckdns.org")[3]
   end
   
   def on
     require 'socket'
-    
-    s = TCPSocket.new '187.207.66.230', 8000
+    unless session[:ip]
+      redirect_to(root_path) and return
+    end
+    s = TCPSocket.new session[:ip], 8000
     s.puts "LightOn\n"
     sleep 0.05
     s.close  
@@ -16,8 +18,10 @@ class LightControlController < ApplicationController
 
   def off
     require 'socket'
-    
-    s = TCPSocket.new '187.207.66.230', 8000
+    unless session[:ip]
+      redirect_to(root_path) and return
+    end    
+    s = TCPSocket.new session[:ip], 8000
     s.puts "LightOff\n"
     sleep 0.05
     s.close  
@@ -26,7 +30,7 @@ class LightControlController < ApplicationController
   def verify
     require 'socket'
     
-    s = TCPSocket.new '187.207.66.230', 8000
+    s = TCPSocket.new session[:ip], 8000
     s.puts "Verify\n"
     while line = s.gets # Read lines from socket
       if line == "On"
@@ -36,6 +40,6 @@ class LightControlController < ApplicationController
       end         
     end
     s.close    
-    redirect_to new_path
+    redirect_to root_path
   end
 end
