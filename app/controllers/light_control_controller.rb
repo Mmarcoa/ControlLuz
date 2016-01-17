@@ -8,25 +8,25 @@ class LightControlController < ApplicationController
   def on
     require 'socket'
     
-    s = TCPSocket.new '187.207.57.43', 8000
+    s = TCPSocket.new '187.207.50.114', 8000
     s.puts "LightOn\n"
-    sleep 0.5
+    sleep 0.05
     s.close  
   end
 
   def off
     require 'socket'
     
-    s = TCPSocket.new '187.207.57.43', 8000
+    s = TCPSocket.new '187.207.50.114', 8000
     s.puts "LightOff\n"
-    sleep 0.5
+    sleep 0.05
     s.close  
   end
   
   def verify
     require 'socket'
     
-    s = TCPSocket.new '187.207.57.43', 8000
+    s = TCPSocket.new '187.207.50.114', 8000
     s.puts "Verify\n"
     while line = s.gets # Read lines from socket
       if line == "On"
