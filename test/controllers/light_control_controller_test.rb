@@ -1,16 +1,10 @@
 require 'test_helper'
 
 class LightControlControllerTest < ActionController::TestCase
-  test "should get welcome" do
-    get :welcome
-    assert_response :success
-    assert_select "title", "Bienvenido | Control de Iluminación"
-  end
-
   test "should get new" do
     get :new
     assert_response :success
-    assert_select "title", "Verificar | Control de Iluminación"
+    assert_select "title", "Bienvenido | Control de Iluminación"
   end
 
   test "should get on" do

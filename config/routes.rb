@@ -5,10 +5,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'light_control#welcome'
+  root 'light_control#new'
   
-  get 'new' => 'light_control#new'  
-  get '/on' => 'light_control#on' 
+  get 'on' => 'light_control#on' 
   get 'off' => 'light_control#off'
   post 'verify' => 'light_control#verify'
   # Example of regular route:

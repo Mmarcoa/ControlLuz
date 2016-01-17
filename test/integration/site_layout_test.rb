@@ -4,7 +4,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
 
   test "layout links" do
     get root_path
-    assert_template 'light_control/welcome'
-    assert_select "a[href=?]", new_path
+    assert_template 'light_control/new'
+    assert_select "form"
   end
 end
