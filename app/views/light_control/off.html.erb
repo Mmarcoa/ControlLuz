@@ -1,6 +1,5 @@
 <% provide(:title, "Off") %>
 <h1>Control de Luz</h1>
-<p>En este momento el LED debería estar apagado</p>
+<p>El LED está Apagado</p>
 
-<%= button_to "Encender", on_path, method: "get" %>
-<%= link_to "Inicio", root_path %>
+<%= button_to "Encender", on_path, method: "get", class: "btn btn-primary btn-lg" %>

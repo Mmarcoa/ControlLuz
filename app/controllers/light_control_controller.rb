@@ -15,11 +15,11 @@ class LightControlController < ApplicationController
     sleep 0.05
     s.close
     rescue Errno::ECONNREFUSED
-      flash[:notice] = "Hubo un error, vuelva a intentarlo"
+      flash[:danger] = "Hubo un error, vuelva a intentarlo"
       session[:ip] = nil
       redirect_to(root_path)
     rescue TCPTimeout::SocketTimeout
-      flash[:notice] = "Su router pudo haber cambiado de IP, vuelva a intentarlo"
+      flash[:danger] = "Su router pudo haber cambiado de IP, vuelva a intentarlo"
       session[:ip] = nil
       redirect_to(root_path)
   end
@@ -34,11 +34,11 @@ class LightControlController < ApplicationController
     sleep 0.05
     s.close
     rescue Errno::ECONNREFUSED
-      flash[:notice] = "Hubo un error, vuelva a intentarlo"
+      flash[:danger] = "Hubo un error, vuelva a intentarlo"
       session[:ip] = nil
       redirect_to(root_path)
     rescue TCPTimeout::SocketTimeout
-      flash[:notice] = "Su router pudo haber cambiado de IP, vuelva a intentarlo"
+      flash[:danger] = "Su router pudo haber cambiado de IP, vuelva a intentarlo"
       session[:ip] = nil
       redirect_to(root_path)    
   end
@@ -57,11 +57,11 @@ class LightControlController < ApplicationController
     end
     s.close
     rescue Errno::ECONNREFUSED
-      flash[:notice] = "Hubo un error, vuelva a intentarlo"
+      flash[:danger] = "Hubo un error, vuelva a intentarlo"
       session[:ip] = nil
       redirect_to(root_path)
     rescue TCPTimeout::SocketTimeout
-      flash[:notice] = "Su router pudo haber cambiado de IP, vuelva a intentarlo"
+      flash[:danger] = "Su router pudo haber cambiado de IP, vuelva a intentarlo"
       session[:ip] = nil
       redirect_to(root_path)        
   end
