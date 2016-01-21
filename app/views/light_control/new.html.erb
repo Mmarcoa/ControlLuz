@@ -1,5 +1,5 @@
 <% provide(:title, "Bienvenido") %>
+
 <h2>Control de Luz</h2>
 <p>Presiona el botón para comenzar a controlar el LED</p>
-
-<%= button_to "App", action: "verify" %>
+<%= button_to "App", {action: "verify"}, data: { disable_with: 'Espere, por favor...' } %>

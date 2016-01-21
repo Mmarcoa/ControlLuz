@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   get 'on' => 'light_control#on' 
   get 'off' => 'light_control#off'
+ 
   post 'verify' => 'light_control#verify'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
