@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   
   get 'on' => 'light_control#on' 
   get 'off' => 'light_control#off'
+  get 'responsivo' => 'light_control#responsivo'
+ 
  
   post 'verify' => 'light_control#verify'
   # Example of regular route:
