@@ -66,7 +66,4 @@ class LightControlController < ApplicationController
       redirect_to(root_path)        
   end
   
-  def responsivo
-  end
-  
 end
