@@ -2,4 +2,4 @@
 <h1>Control de Luz</h1>
 <p>El LED está Apagado</p>
 
-<%= button_to "Encender", on_path, method: "get", class: "btn btn-primary btn-lg" %>
+<%= button_to "Encender", on_path, method: "get", data: { disable_with: 'Encendiendo...' }, class: "btn btn-primary btn-lg" %>
